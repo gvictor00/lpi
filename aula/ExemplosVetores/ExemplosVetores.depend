@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1525702640 source:c:\users\gvsa\documents\lpi\aula\exemplosvetores\main.c
+	"exemplo1.h"
+
+1525702181 c:\users\gvsa\documents\lpi\aula\exemplosvetores\exemplo1.h
+
+1525703098 source:c:\users\gvsa\documents\lpi\aula\exemplosvetores\exemplo1.c
+	<stdio.h>
+	<stdlib.h>
+
