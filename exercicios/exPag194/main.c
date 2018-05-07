@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "utils.h"
 
 int main()
 {
@@ -44,12 +45,13 @@ int main()
     printf("Multiplicacao: %d\n", mult);
     printf("Media ponderada: %d\n", (somaPonderada/somaPesos));
 
+    printf("Vetor inicial: ");
+    imprimeVetorInt(vetor, 10);
+    print("\n");
+
     printf("Vetor normalizado: ");
-    for(i = 0; i < 10; i++)
-    {
-        normalizado[i] = (float)(vetor[i]-menor)/(maior - menor);
-        printf("%.2f ", normalizado[i]);
-    }
+    imprimeVetorFloat(normalizado, 10);
     printf("\n");
+
     return 0;
 }
