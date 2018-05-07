@@ -44,7 +44,7 @@ int main()
     printf("Multiplicacao: %d\n", mult);
     printf("Media ponderada: %d\n", (somaPonderada/somaPesos));
 
-    printf("Vetor normalizado: ")
+    printf("Vetor normalizado: ");
     for(i = 0; i < 10; i++)
     {
         normalizado[i] = (vetor[i]-menor)/(maior - menor);
