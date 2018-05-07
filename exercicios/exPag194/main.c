@@ -8,7 +8,7 @@ int main()
     int somaPesos = 0;
     int somaPonderada = 0;
     int vetor[10] = {0};
-    int normalizado[10] = {0};
+    float normalizado[10] = {0};
     int mult = 1;
 
     int maior = 0, menor = 10000;
@@ -47,8 +47,8 @@ int main()
     printf("Vetor normalizado: ");
     for(i = 0; i < 10; i++)
     {
-        normalizado[i] = (vetor[i]-menor)/(maior - menor);
-        printf("%d ", normalizado[i]);
+        normalizado[i] = (float)(vetor[i]-menor)/(maior - menor);
+        printf("%.2f ", normalizado[i]);
     }
     printf("\n");
     return 0;
