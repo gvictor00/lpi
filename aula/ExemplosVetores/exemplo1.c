@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void exemplo1()
+void exemplo1(int alunos)
 {
-    const int N = 3;
-    char notas[3] = {'A', 'A', 'A'};
+    char notas[alunos];
     char nota = 'A';
     int i, soma = 0;
-    for(i = 0; i < N; i++)
+    for(i = 0; i < alunos; i++)
     {
-        printf("Digite a nota do aluno #%d: ", i);
+        printf("Digite a nota do aluno #%d: ", i+1);
         scanf(" %c", &nota); // Inclui um espaço no comeco, para evitar o \n
 
         if(nota >= 'a' && nota <= 'e' || nota >= 'A' && nota <= 'E')
@@ -27,5 +26,5 @@ void exemplo1()
         else
             soma += 0;
     }
-    printf("Media = %.2f\n", (float) soma/N);
+    printf("Media = %.2f\n", (float) soma/alunos);
 }
