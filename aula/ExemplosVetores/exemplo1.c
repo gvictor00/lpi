@@ -4,13 +4,13 @@
 void exemplo1()
 {
     const int N = 3;
-    char notas[] = {'A', 'A', 'A'};
+    char notas[3] = {'A', 'A', 'A'};
     char nota = 'A';
     int i, soma = 0;
     for(i = 0; i < N; i++)
     {
         printf("Digite a nota do aluno #%d: ", i);
-        scanf("%c%*c", & nota);
+        scanf(" %c", &nota); // Inclui um espaço no comeco, para evitar o \n
 
         if(nota >= 'a' && nota <= 'e' || nota >= 'A' && nota <= 'E')
             notas[i] = nota;
