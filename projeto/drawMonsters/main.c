@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "monsters.h"
 
 int main()
 {
-    printf("Hello world!\n");
+    drawMonster(1);
+    printf("\n");
+    drawMonster(2);
     return 0;
 }
