@@ -32,9 +32,14 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="desenhos.h" />
+		<Unit filename="deslocamento.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="deslocamento.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="map.h" />
 		<Unit filename="monsters.c">
 			<Option compilerVar="CC" />
 		</Unit>
