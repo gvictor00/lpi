@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1526010523 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\main.c
+1526152887 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\main.c
 	<stdio.h>
 	<stdlib.h>
 	"monsters.h"
@@ -14,7 +14,7 @@
 
 1525838407 c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\desenhos.h
 
-1526010851 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\deslocamento.c
+1526153065 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\deslocamento.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>

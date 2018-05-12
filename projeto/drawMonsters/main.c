@@ -33,7 +33,7 @@ int main()
             break;
         case 80:
             moveBaixo();
-            //printf("Sezta para baixo\n");
+            //printf("Seta para baixo\n");
             desenhaMatriz();
             break;
         case 32:
@@ -44,6 +44,7 @@ int main()
             sair = 1;
             break;
         }
+        tecla = 0;
     }
 
     drawMonster(1);

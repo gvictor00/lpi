@@ -8,22 +8,14 @@ int colunaAtual = 0;
 int linhaAtual = 0;
 
 int moveDireita(){
-    if(linhaAtual < 20){
-        linhaAtual++;
+    if(colunaAtual < totalColunas-1){
+        colunaAtual++;
         return 1;
     }
     return 0;
 }
 
 int moveEsquerda(){
-    if(linhaAtual > 0){
-        linhaAtual--;
-        return 1;
-    }
-    return 0;
-}
-
-int moveCima(){
     if(colunaAtual > 0){
         colunaAtual--;
         return 1;
@@ -31,9 +23,17 @@ int moveCima(){
     return 0;
 }
 
+int moveCima(){
+    if(linhaAtual > 0){
+        linhaAtual--;
+        return 1;
+    }
+    return 0;
+}
+
 int moveBaixo(){
-    if(colunaAtual < 20){
-        colunaAtual++;
+    if(linhaAtual < totalLinhas-1){
+        linhaAtual++;
         return 1;
     }
     return 0;
@@ -42,12 +42,13 @@ int moveBaixo(){
 void resetMatriz()
 {
     int i = 0, j = 0;
-    for(i = 0; i < totalColunas; i++){
-        for(j = 0; j < totalLinhas; j++){
+    for(i = 0; i < totalLinhas; i++){
+        for(j = 0; j < totalColunas; j++){
             caminho[i][j] = 0;
         }
     }
     system("cls");
+    printf("Posicao atual = [%d][%d]\n\n",linhaAtual,colunaAtual);
 }
 
 void desenhaMatriz()
@@ -58,13 +59,9 @@ void desenhaMatriz()
     for(i = 0; i < totalLinhas; i++){
         for(j = 0; j < totalColunas; j++){
                 printf("%d ",caminho[i][j]);
-            if(caminho[i][j] == 0)
+            if(caminho[i][j] != 0)
             {
-             //   printf(" ");
-            }
-            else
-            {
-//                printf("o");
+                //printf("o");
             }
         }
         printf("\n");
