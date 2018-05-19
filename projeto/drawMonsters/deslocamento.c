@@ -3,9 +3,14 @@
 #include <conio.h>
 #include "deslocamento.h"
 #include "map.h"
+#define MAX_TIROS 3
 
 int colunaAtual = 0;
-int linhaAtual = 0;
+int linhaAtual = 19;
+
+int qtd_tiros = 0;
+int tiros[MAX_TIROS][2] = {{0,0},{0,0},{0,0}};
+int tem_tiro = 0;
 
 int moveDireita(){
     if(colunaAtual < totalColunas-1){
@@ -39,6 +44,38 @@ int moveBaixo(){
     return 0;
 }
 
+int criaTiro(){
+    if(qtd_tiros < MAX_TIROS){
+        tiros[qtd_tiros][0] = linhaAtual - 1;
+        tiros[qtd_tiros][1] = colunaAtual;
+        tem_tiro = 1; // Tem um tiro no mapa
+        qtd_tiros++;
+    }
+    return 1;
+}
+
+int moveTiro(){
+    int i = 0;
+    if(tem_tiro){
+        for(i = 0;i < qtd_tiros; i++){
+            if(tiros[i][0] > 0)
+            {
+                tiros[i][0]--;
+            }
+            else
+            {
+                tiros[i][0] = 0;
+                qtd_tiros--;
+            }
+        }
+        if(qtd_tiros == 0)
+        {
+            tem_tiro = 0;
+        }
+    }
+    return 1;
+}
+
 void resetMatriz()
 {
     int i = 0, j = 0;
@@ -48,22 +85,33 @@ void resetMatriz()
         }
     }
     system("cls");
-    printf("Posicao atual = [%d][%d]\n\n",linhaAtual,colunaAtual);
+    printf("Posicao atual = [%d][%d]\n",linhaAtual,colunaAtual);
+    printf("Qtd. tiros = [%d] | tem_tiro = [%d]", qtd_tiros, tem_tiro);
 }
 
 void desenhaMatriz()
 {
+    int i = 0, j = 0;
     resetMatriz();
     caminho[linhaAtual][colunaAtual] = 1;
-    int i = 0, j = 0;
+    if(tem_tiro){
+        for(i = 0;i < qtd_tiros; i++){
+            caminho[tiros[i][0]][tiros[i][1]] = 2;
+        }
+    }
     for(i = 0; i < totalLinhas; i++){
         for(j = 0; j < totalColunas; j++){
-                printf("%d ",caminho[i][j]);
-            if(caminho[i][j] != 0)
-            {
-                //printf("o");
+            if(caminho[i][j] == 1){
+                printf("^ ");
+            }
+            else if(caminho[i][j] == 2){
+                printf("* ");
+            }
+            else{
+                printf("  ");
             }
         }
         printf("\n");
     }
+    moveTiro();
 }

@@ -4,6 +4,7 @@
 #define totalColunas 20
 #define totalLinhas 20
 
+
 int caminho[totalLinhas][totalColunas] = {
 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -26,5 +27,6 @@ int caminho[totalLinhas][totalColunas] = {
 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 };
+
 
 #endif
