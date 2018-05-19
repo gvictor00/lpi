@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1526742032 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\main.c
+1526745521 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<windows.h>
+	<winver.h>
 	"monsters.h"
 	"deslocamento.h"
 
