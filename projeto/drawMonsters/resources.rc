@@ -1,0 +1,29 @@
+#define VOS_NT_WINDOWS32    0x00040004L
+#define VFT_APP             0x00000001L
+
+//include version information in .exe, modify these values to match your needs
+1 VERSIONINFO
+FILEVERSION 0,1,3,0
+PRODUCTVERSION 0,1,3,0
+FILETYPE VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904E4"
+        {
+            //VALUE "CompanyName", "write version info here"
+            VALUE "FileVersion",        "0.1.3"
+            VALUE "FileDescription",    "Projeto LPI - Poli/UPE"
+            VALUE "InternalName",       "Projeto"
+            VALUE "LegalCopyright",     "George @ 2018"
+            //VALUE "LegalTrademarks", "write version info here"
+            VALUE "OriginalFilename",   "drawMonsters.exe"
+            VALUE "ProductName",        "Space Invaders"
+            VALUE "ProductVersion",      "0.1.3.0"
+        }
+    }
+    BLOCK "VarFileInfo"
+    {
+        VALUE "Translation", 0x0416, 1252 //language codes
+    }
+}
