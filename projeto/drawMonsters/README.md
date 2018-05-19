@@ -1,9 +1,9 @@
-#Space Invaders
+# Space Invaders
 
-##Motivação
+## Motivação
 O projeto foi proposto pelo professor Joabe Jesus na disciplina de *Linguagem de Programação Imperativa* e tem como objetivo desenvolver um jogo protótipo funcional do jogo Space Invaders.
 
-##TODO
+## TODO
 
 * Implementar os monstros
 * Implementar o sistema de vidas
