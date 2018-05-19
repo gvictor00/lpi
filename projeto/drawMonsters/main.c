@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
+#include <winver.h> // Suporte à exibição de versões
 
 #include "monsters.h"
 #include "deslocamento.h"
