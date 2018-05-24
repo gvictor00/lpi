@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="drawMonsters" />
+		<Option title="SpaceInvaders" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -31,6 +31,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="README.md" />
 		<Unit filename="desenhos.h" />
 		<Unit filename="deslocamento.c">
 			<Option compilerVar="CC" />
@@ -44,6 +45,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="monsters.h" />
+		<Unit filename="resources.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

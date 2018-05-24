@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include "monsters.h"
 #include "deslocamento.h"
 #include "map.h"
 #define MAX_TIROS 3
@@ -84,16 +85,32 @@ void resetMatriz()
             caminho[i][j] = 0;
         }
     }
-    system("cls");
+
+    int qtdMonst = getQtdMonstros();
+    //system("cls");
     printf("Posicao atual = [%d][%d]\n",linhaAtual,colunaAtual);
-    printf("Qtd. tiros = [%d] | tem_tiro = [%d]", qtd_tiros, tem_tiro);
+    printf("Qtd. tiros = [%d] | tem_tiro = [%d] | monstros: [%d]", qtd_tiros, tem_tiro, qtdMonst);
 }
 
 void desenhaMatriz()
 {
     int i = 0, j = 0;
+    int monst = 0;
+    int qtdMonst = getQtdMonstros();
+
     resetMatriz();
     caminho[linhaAtual][colunaAtual] = 1;
+
+    if(qtdMonst > 0)
+    {
+        monst = qtdMonst;
+        for(i = 0; i < monst; i++){
+
+            printf("\n [%d]", monstros[i].posColuna);
+            //caminho[monstros[i].posLinha][monstros[i].posColuna] = 3;
+        }
+    }
+
     if(tem_tiro){
         for(i = 0;i < qtd_tiros; i++){
             caminho[tiros[i][0]][tiros[i][1]] = 2;
@@ -106,6 +123,10 @@ void desenhaMatriz()
             }
             else if(caminho[i][j] == 2){
                 printf("* ");
+            }
+            else if(caminho[i][j] == 3){
+                printf("%c ", monstros[monst].ch);
+                monst--;
             }
             else{
                 printf("  ");

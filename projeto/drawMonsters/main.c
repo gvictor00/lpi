@@ -13,6 +13,8 @@ int main()
     char tecla;
     int ret = 0;
 
+    setupMonsters(5,'W');
+
     while(sair != 1)
     {
         if(kbhit())
@@ -48,7 +50,7 @@ int main()
         }
         tecla = 0;
         desenhaMatriz();
-        Sleep(50);
+        Sleep(20);
     }
 
     drawMonster(1);

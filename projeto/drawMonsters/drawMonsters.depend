@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1526745521 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\main.c
+1527126903 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -8,23 +8,27 @@
 	"monsters.h"
 	"deslocamento.h"
 
-1525836623 c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\monsters.h
+1527127228 c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\monsters.h
 
-1525838412 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\monsters.c
+1527127849 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\monsters.c
 	<stdio.h>
 	<stdlib.h>
+	"monsters.h"
 	"desenhos.h"
 
 1525838407 c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\desenhos.h
 
-1526743270 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\deslocamento.c
+1527127719 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\deslocamento.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
+	"monsters.h"
 	"deslocamento.h"
 	"map.h"
 
 1526741367 c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\deslocamento.h
 
 1526154247 c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\map.h
+
+1526745991 source:c:\users\george\documents\faculdade\lpi\projeto\drawmonsters\resources.rc
 
