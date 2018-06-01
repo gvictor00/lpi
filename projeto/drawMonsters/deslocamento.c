@@ -5,13 +5,36 @@
 #include "deslocamento.h"
 #include "map.h"
 #define MAX_TIROS 3
-
+#define MAX_MONSTROS 10
 int colunaAtual = 0;
 int linhaAtual = 19;
 
+
+/// Tiros
+//=====================
 int qtd_tiros = 0;
 int tiros[MAX_TIROS][2] = {{0,0},{0,0},{0,0}};
 int tem_tiro = 0;
+//=====================
+
+///Monstros
+//=====================
+// [0] = linha
+// [1] = coluna
+// [2] = ativo
+int monstros[MAX_MONSTROS][3] = {
+    {0,0,0},
+    {0,0,0},
+    {0,0,0},
+    {0,0,0},
+    {0,0,0},
+    {0,0,0},
+    {0,0,0},
+    {0,0,0},
+    {0,0,0},
+    {0,0,0}
+};
+//=====================
 
 int moveDireita(){
     if(colunaAtual < totalColunas-1){
@@ -86,21 +109,22 @@ void resetMatriz()
         }
     }
 
-    int qtdMonst = getQtdMonstros();
-    //system("cls");
+    int qtdMonst = 0;
+    system("cls");
     printf("Posicao atual = [%d][%d]\n",linhaAtual,colunaAtual);
-    printf("Qtd. tiros = [%d] | tem_tiro = [%d] | monstros: [%d]", qtd_tiros, tem_tiro, qtdMonst);
+    //printf("Qtd. tiros = [%d] | tem_tiro = [%d] | monstros: [%d]", qtd_tiros, tem_tiro, qtdMonst);
 }
 
 void desenhaMatriz()
 {
     int i = 0, j = 0;
+    char c = 'W';
     int monst = 0;
-    int qtdMonst = getQtdMonstros();
+    int qtdMonst = 0;
 
     resetMatriz();
     caminho[linhaAtual][colunaAtual] = 1;
-
+    /*
     if(qtdMonst > 0)
     {
         monst = qtdMonst;
@@ -110,6 +134,7 @@ void desenhaMatriz()
             //caminho[monstros[i].posLinha][monstros[i].posColuna] = 3;
         }
     }
+    */
 
     if(tem_tiro){
         for(i = 0;i < qtd_tiros; i++){
@@ -125,8 +150,7 @@ void desenhaMatriz()
                 printf("* ");
             }
             else if(caminho[i][j] == 3){
-                printf("%c ", monstros[monst].ch);
-                monst--;
+                printf("W ");
             }
             else{
                 printf("  ");

@@ -13,7 +13,7 @@ int main()
     char tecla;
     int ret = 0;
 
-    setupMonsters(5,'W');
+    setupMonsters(5);
 
     while(sair != 1)
     {
