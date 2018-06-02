@@ -13,6 +13,8 @@ int linhaAtual = 19;
 /// Tiros
 //=====================
 int qtd_tiros = 0;
+// [0] - Linha
+// [1] - Coluna
 int tiros[MAX_TIROS][2] = {{0,0},{0,0},{0,0}};
 int tem_tiro = 0;
 //=====================
@@ -24,16 +26,16 @@ int tem_tiro = 0;
 // [2] = ativo
 int monstros[MAX_MONSTROS][3] =
 {
-    {0,1,1},
-    {0,3,1},
-    {0,5,1},
-    {0,7,1},
-    {0,9,1},
-    {0,11,1},
-    {0,13,1},
-    {0,15,1},
-    {0,17,1},
-    {0,19,1}
+    {1,1,1},
+    {1,3,1},
+    {1,5,1},
+    {1,7,1},
+    {1,9,1},
+    {1,11,1},
+    {1,13,1},
+    {1,15,1},
+    {1,17,1},
+    {1,19,1}
 };
 //=====================
 
@@ -88,7 +90,19 @@ int criaTiro()
     }
     return 1;
 }
-
+int testaPosicao(int indiceTiros, int indiceMonstros)
+{
+    int ret = 0;
+    //printf("Monstro #%d - [%d][%d] | [%d][%d]\n", indiceMonstros,monstros[indiceMonstros][0], monstros[indiceMonstros][1],tiros[indiceTiros][0],tiros[indiceTiros][1]);
+    if(tiros[indiceTiros][1] == monstros[indiceMonstros][1])
+    {
+        if(tiros[indiceTiros][0] == monstros[indiceMonstros][0])
+        {
+            ret = 1;
+        }
+    }
+    return ret;
+}
 int moveTiro()
 {
     int i = 0;
@@ -100,9 +114,8 @@ int moveTiro()
             if(tiros[i][0] > 0)
             {
                 for(j = 0; j < MAX_MONSTROS; j++){
-                    if(tiros[i][0] == monstros[j][0] && tiros[i][1] == monstros[j][1] && monstros[j][2] == 1)
+                    if(testaPosicao(i,j))
                     {
-                        tiros[i][0] = 0;
                         monstros[j][2] = 0;
                     }
                 }
