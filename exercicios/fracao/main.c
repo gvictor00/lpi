@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct fracao
-{
-    float numerador;
-    float denominador;
-} Fracao;
+#include <fracao.h>
 
 int main()
 {
