@@ -15,15 +15,19 @@ int main()
     switch(op)
     {
     case '+':
+        resultado = soma_literal(f1,f2);
         resultado_numerico = soma(f1,f2);
         break;
     case '-':
+        resultado = subrai_literal(f1,f2);
         resultado_numerico = subtracao(f1,f2);
         break;
     case '*':
+        resultado = multiplica_literal(f1,f2);
         resultado_numerico = multiplica(f1,f2);
         break;
     case '/':
+        resultado = divide_literal(f1,f2);
         resultado_numerico = divide(f1,f2);
         break;
     }
@@ -31,34 +35,4 @@ int main()
     printf("\n");
     printf("%.2f/%.2f = %.2f", resultado.numerador, resultado.denominador, resultado_numerico);
     return 0;
-}
-
-Fracao leFracao(int i)
-{
-    Fracao f;
-
-    printf("Digite a primeira fracao (n/n): ");
-    scanf("%f/%f", &f.numerador, &f.denominador);
-
-    return f;
-}
-
-float soma(Fracao f1, Fracao f2)
-{
-    return (((f1.denominador*f2.denominador)/2)/f1.denominador)*f1.numerador + (((f1.denominador*f2.denominador)/2)/f2.denominador)*f2.numerador;
-}
-
-float subtracao(Fracao f1, Fracao f2)
-{
-    return (((f1.denominador*f2.denominador)/2)/f1.denominador)*f1.numerador - (((f1.denominador*f2.denominador)/2)/f2.denominador)*f2.numerador;
-}
-
-float multiplica(Fracao f1, Fracao f2)
-{
-    return f1.numerador*f2.numerador/f1.denominador*f2.denominador;
-}
-
-float divide(Fracao f1, Fracao f2)
-{
-    return f1.numerador*f2.denominador/f1.denominador*f2.numerador;
 }

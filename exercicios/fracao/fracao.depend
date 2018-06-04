@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1528123424 source:c:\users\gvsa\documents\lpi\exercicios\fracao\main.c
+	<stdio.h>
+	<stdlib.h>
+	"fracao.h"
+
+1528123043 c:\users\gvsa\documents\lpi\exercicios\fracao\fracao.h
+
