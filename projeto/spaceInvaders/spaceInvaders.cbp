@@ -31,8 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="invStructs.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="resources.rc">
+			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Extensions>
 			<code_completion />
