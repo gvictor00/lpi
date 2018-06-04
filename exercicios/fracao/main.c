@@ -1,13 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <fracao.h>
+#include "fracao.h"
 
 int main()
 {
-    float a = 0;
-    float b = 0;
     char op = 0;
-    float mmc = 0;
     float resultado_numerico = 0;
 
     Fracao f1, f2, resultado;
@@ -15,27 +12,19 @@ int main()
     f1 = leFracao(1);
     f2 = leFracao(2);
 
-    Fracao resultado;
-
     switch(op)
     {
     case '+':
-        resultado.denominador = (f1.denominador*f2.denominador)/2;
-        mmc = resultado.denominador;
-        resultado.numerador = (mmc/f1.denominador)*f1.numerador + (mmc/f2.denominador)*f2.numerador;
+        resultado_numerico = soma(f1,f2);
         break;
     case '-':
-        resultado.denominador = (f1.denominador*f2.denominador)/2;
-        mmc = resultado.denominador;
-        resultado.numerador = (mmc/f1.denominador)*f1.numerador - (mmc/f2.denominador)*f2.numerador;
+        resultado_numerico = subtracao(f1,f2);
         break;
     case '*':
-        resultado.denominador = f1.denominador*f2.denominador;
-        resultado.numerador = f1.numerador*f2.numerador;
+        resultado_numerico = multiplica(f1,f2);
         break;
     case '/':
-        resultado.denominador = f1.denominador*f2.numerador;
-        resultado.numerador = f1.numerador*f2.denominador;
+        resultado_numerico = divide(f1,f2);
         break;
     }
     resultado_numerico = resultado.numerador/resultado.denominador;
@@ -44,7 +33,8 @@ int main()
     return 0;
 }
 
-Fracao leFracao(int i){
+Fracao leFracao(int i)
+{
     Fracao f;
 
     printf("Digite a primeira fracao (n/n): ");
@@ -55,32 +45,20 @@ Fracao leFracao(int i){
 
 float soma(Fracao f1, Fracao f2)
 {
-    float denominador = (f1.denominador*f2.denominador)/2;
-    float numerador = (mmc/f1.denominador)*f1.numerador + (mmc/f2.denominador)*f2.numerador;
-
-    return numerador/numerador;
+    return (((f1.denominador*f2.denominador)/2)/f1.denominador)*f1.numerador + (((f1.denominador*f2.denominador)/2)/f2.denominador)*f2.numerador;
 }
 
-float subtrai(Fracao f1, Fracao f2)
+float subtracao(Fracao f1, Fracao f2)
 {
-    float denominador = (f1.denominador*f2.denominador)/2;
-    float numerador = (mmc/f1.denominador)*f1.numerador - (mmc/f2.denominador)*f2.numerador;
-
-    return numerador/numerador;
+    return (((f1.denominador*f2.denominador)/2)/f1.denominador)*f1.numerador - (((f1.denominador*f2.denominador)/2)/f2.denominador)*f2.numerador;
 }
 
 float multiplica(Fracao f1, Fracao f2)
 {
-    float denominador = f1.denominador*f2.denominador;
-    float numerador = f1.numerador*f2.numerador;
-
-    return numerador/numerador;
+    return f1.numerador*f2.numerador/f1.denominador*f2.denominador;
 }
 
 float divide(Fracao f1, Fracao f2)
 {
-    float denominador = f1.denominador*f2.numerador;
-    float numerador = f1.numerador*f2.denominador;
-
-    return numerador/numerador;
+    return f1.numerador*f2.denominador/f1.denominador*f2.numerador;
 }
