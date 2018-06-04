@@ -7,5 +7,5 @@ typedef struct fracao
     float denominador;
 } Fracao;
 
-
+Fracao leFracao(int i);
 #endif // FRACAO_H_INCLUDED

@@ -10,22 +10,10 @@ int main()
     float mmc = 0;
     float resultado_numerico = 0;
 
-    printf("Digite a fracao (n/n): ");
-    scanf("%f/%f", &a, &b);
+    Fracao f1, f2, resultado;
 
-    Fracao f1;
-    f1.numerador = a;
-    f1.denominador = b;
-
-    printf("Digite a primeira fracao (n/n): ");
-    scanf("%f/%f", &a, &b);
-
-    Fracao f2;
-    f2.numerador = a;
-    f2.denominador = b;
-
-    printf("Digite a operacao a ser realizada: ");
-    scanf(" %c", &op);
+    f1 = leFracao(1);
+    f2 = leFracao(2);
 
     Fracao resultado;
 
@@ -54,4 +42,13 @@ int main()
     printf("\n");
     printf("%.2f/%.2f = %.2f", resultado.numerador, resultado.denominador, resultado_numerico);
     return 0;
+}
+
+Fracao leFracao(int i){
+    Fracao f;
+
+    printf("Digite a primeira fracao (n/n): ");
+    scanf("%f/%f", &f.numerador, &f.denominador);
+
+    return f;
 }
