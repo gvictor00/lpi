@@ -52,3 +52,35 @@ Fracao leFracao(int i){
 
     return f;
 }
+
+float soma(Fracao f1, Fracao f2)
+{
+    float denominador = (f1.denominador*f2.denominador)/2;
+    float numerador = (mmc/f1.denominador)*f1.numerador + (mmc/f2.denominador)*f2.numerador;
+
+    return numerador/numerador;
+}
+
+float subtrai(Fracao f1, Fracao f2)
+{
+    float denominador = (f1.denominador*f2.denominador)/2;
+    float numerador = (mmc/f1.denominador)*f1.numerador - (mmc/f2.denominador)*f2.numerador;
+
+    return numerador/numerador;
+}
+
+float multiplica(Fracao f1, Fracao f2)
+{
+    float denominador = f1.denominador*f2.denominador;
+    float numerador = f1.numerador*f2.numerador;
+
+    return numerador/numerador;
+}
+
+float divide(Fracao f1, Fracao f2)
+{
+    float denominador = f1.denominador*f2.numerador;
+    float numerador = f1.numerador*f2.denominador;
+
+    return numerador/numerador;
+}

@@ -8,4 +8,10 @@ typedef struct fracao
 } Fracao;
 
 Fracao leFracao(int i);
+
+float soma(Fracao f1, Fracao f2);
+float subrai(Fracao f1, Fracao f2);
+float multiplica(Fracao f1, Fracao f2);
+float divide(Fracao f1, Fracao f2);
+
 #endif // FRACAO_H_INCLUDED
