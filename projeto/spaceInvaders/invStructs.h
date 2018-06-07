@@ -8,4 +8,11 @@ typedef struct player{
     int pontuacao;
 }Player;
 
+typedef struct monstro{
+    int linha;
+    int coluna;
+    int vidas;
+    int pontuacao;
+}Monstro;
+
 #endif // INVSTRUCTS_H_INCLUDED
